@@ -30,12 +30,15 @@ The following **additional** features are implemented:
 * [x] List anything else that you added to improve the site's functionality!
   - Intuitive side panel that displays buttons and search bars for filtering
   - Styling
+  - used "Open Brewery API" https://www.openbrewerydb.org/documentation
+     
+
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/WyytBTz.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with LICEcap 
