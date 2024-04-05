@@ -1,71 +1,71 @@
-# Getting Started with Create React App
+# Web Development Project 5 - *Brewery Navigator*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Submitted by: **Reneca Capuno**
 
-## Available Scripts
+This web app: **insert description**
 
-In the project directory, you can run:
+Time spent: **8** hours spent in total
 
-### `yarn start`
+## Required Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The following **required** functionality is completed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [x] **The list displays a list of data fetched using an API call**
+- [x] **Data uses the useEffect React hook and async/await syntax**
+- [x] **The app dashboard includes at least three summary statistics about the data such as**
+  - [x] Total number of Breweries
+  - [x] Total number of Micro Breweries
+  - [x] Total number of Korean Breweries 
+- [x] **A search bar allows the user to search for an item in the fetched data**
+- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
-### `yarn test`
+The following **optional** features are implemented:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [ ] Multiple filters can be applied simultaneously
+- [ ] Filters use different input types such as a text input, a selection, or a slider
+- [ ] The user can enter specific bounds for filter values
 
-### `yarn build`
+The following **additional** features are implemented:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [x] List anything else that you added to improve the site's functionality!
+  - Intuitive side panel that displays buttons and search bars for filtering
+  - Styling
+  - used "Open Brewery API" https://www.openbrewerydb.org/documentation
+     
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Video Walkthrough
 
-### `yarn eject`
+Here's a walkthrough of implemented user stories:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src='https://i.imgur.com/WyytBTz.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with LICEcap 
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Notes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Describe any challenges encountered while building the app.
+- Understand the nature of useEffect
+- understand endpoint documentation
+- understand CSS styling 
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Copyright 2024 Reneca Capuno
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-### Code Splitting
+        http://www.apache.org/licenses/LICENSE-2.0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# Brewery_Navigator" 
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
