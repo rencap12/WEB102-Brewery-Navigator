@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './App.css';
 
 const App = () => {
@@ -12,6 +13,57 @@ const App = () => {
   const [filteredType, setFilteredType] = useState(null);
   const [citySearchTerm, setCitySearchTerm] = useState('');
 
+  const [totalNanoBreweries, setTotalNanoBreweries] = useState(0);
+  const [totalRegionalBreweries, setTotalRegionalBreweries] = useState(0);
+  const [totalBrewpubs, setTotalBrewpubs] = useState(0);
+  const [totalLargeBreweries, setTotalLargeBreweries] = useState(0);
+  const [totalPlanningBreweries, setTotalPlanningBreweries] = useState(0);
+  const [totalBarBreweries, setTotalBarBreweries] = useState(0);
+  const [totalContractBreweries, setTotalContractBreweries] = useState(0);
+  const [totalProprietorBreweries, setTotalProprietorBreweries] = useState(0);
+  const [totalClosedBreweries, setTotalClosedBreweries] = useState(0);
+
+  useEffect(() => {
+    const fetchBreweryTotals = async () => {
+      try {
+        const microResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=micro');
+        setTotalMicroBreweries(microResponse.data.total);
+
+        const nanoResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=nano');
+        setTotalNanoBreweries(nanoResponse.data.total);
+
+        const regionalResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=regional');
+        setTotalRegionalBreweries(regionalResponse.data.total);
+
+        const brewpubResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=brewpub');
+        setTotalBrewpubs(brewpubResponse.data.total);
+
+        const largeResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=large');
+        setTotalLargeBreweries(largeResponse.data.total);
+
+        const planningResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=planning');
+        setTotalPlanningBreweries(planningResponse.data.total);
+
+        const barResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=bar');
+        setTotalBarBreweries(barResponse.data.total);
+
+        const contractResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=contract');
+        setTotalContractBreweries(contractResponse.data.total);
+
+        const proprietorResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=proprietor');
+        setTotalProprietorBreweries(proprietorResponse.data.total);
+
+        const closedResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_type=closed');
+        setTotalClosedBreweries(closedResponse.data.total);
+      } catch (error) {
+        console.error('Error fetching brewery totals:', error);
+      }
+    };
+
+    fetchBreweryTotals();
+  }, []);
+
+
   const fetchDefaultBreweries = async () => {
     try {
       const response = await axios.get('https://api.openbrewerydb.org/v1/breweries');
@@ -23,6 +75,7 @@ const App = () => {
     }
   };
 
+  // Fetch default breweries
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,9 +90,6 @@ const App = () => {
 
         const koreanResponse = await axios.get('https://api.openbrewerydb.org/v1/breweries/meta?by_country=south_korea');
         setTotalKoreanBreweries(koreanResponse.data.total);
-
-        // Fetch default breweries here
-        fetchDefaultBreweries();
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -48,6 +98,7 @@ const App = () => {
     fetchData();
   }, []);
 
+  // Handle search
   useEffect(() => {
     const handleSearch = async () => {
       try {
@@ -61,6 +112,7 @@ const App = () => {
     handleSearch();
   }, [searchTerm]);
 
+  // Filter breweries by type
   const filterByType = async type => {
     try {
       const response = await axios.get(`https://api.openbrewerydb.org/v1/breweries?by_type=${type}`);
@@ -72,6 +124,7 @@ const App = () => {
     }
   };
 
+  // Filter breweries by city
   useEffect(() => {
     const filterByCity = async () => {
       try {
@@ -86,6 +139,7 @@ const App = () => {
     filterByCity();
   }, [citySearchTerm]);
 
+  // Reset filters
   const resetFilters = async () => {
     try {
       await fetchDefaultBreweries();
@@ -94,7 +148,24 @@ const App = () => {
     }
   };
 
+  // Total breweries
   const totalBreweries = metaData ? metaData.total : 0;
+
+  // Data for the chart
+  const chartData = [
+    { type: 'Micro', count: totalMicroBreweries },
+    { type: 'Nano', count: totalNanoBreweries },
+    { type: 'Regional', count: totalRegionalBreweries },
+    { type: 'Brewpub', count: totalBrewpubs },
+    { type: 'Large', count: totalLargeBreweries },
+    { type: 'Planning', count: totalPlanningBreweries },
+    { type: 'Bar', count: totalBarBreweries },
+    { type: 'Contract', count: totalContractBreweries },
+    { type: 'Proprietor', count: totalProprietorBreweries },
+    { type: 'Closed', count: totalClosedBreweries }
+  ];
+
+  const maxCount = Math.max(...chartData.map(data => data.count));
 
   return (
     <div className="container">
@@ -161,6 +232,17 @@ const App = () => {
             ))
           )}
         </div>
+      </div>
+      <div className="chart-container">
+        <h2 style={{textAlign: 'center'}}>Number of Breweries by Type</h2>
+        <BarChart width={700} height={500} data={chartData}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="type" angle={-45} textAnchor="end" interval={0} height={100} />
+          <YAxis domain={[0, maxCount + 10]} />
+          <Tooltip />
+          <Legend verticalAlign="top" />
+          <Bar dataKey="count" fill="#8884d8" />
+        </BarChart>
       </div>
     </div>
   );

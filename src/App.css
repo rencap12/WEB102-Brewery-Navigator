@@ -14,12 +14,12 @@
   color: #fff;
 }
 
-
+/*
 .sidebar, .list-container {
-  width: 50%; /* Each div takes up 50% of the container width */
-  border: 1px solid black; /* Just for visualization */
+  width: 50%;  Each div takes up 50% of the container width 
+  border: 1px solid black;  Just for visualization 
 }
-
+*/
 
 /* Styling for the sidebar */
 .sidebar {
@@ -44,7 +44,7 @@
 .list-container {
   display: inline-block;
   flex-grow: 1;
-  width: 200px;
+  width: 100px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -119,4 +119,11 @@ button:hover {
 
 button:focus {
   outline: none;
+}
+
+.chart-container {
+  width: max-content;
+  padding: 20px;
+  text-align: center; /* Center align the chart */
+  margin-right: 50px;
 }
