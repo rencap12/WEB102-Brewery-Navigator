@@ -1,47 +1,39 @@
-# Web Development Project 5 - *Brewery Navigator*
+# Web Development Project 6 - *Brewery Navigator*
 
 Submitted by: **Reneca Capuno**
 
-This web app: **insert description**
+This web app: **allows users to explore breweries, filter them by various criteria, view summary statistics, and access detailed information for each brewery with the option to navigate back to the main page.**
 
-Time spent: **8** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The list displays a list of data fetched using an API call**
-- [x] **Data uses the useEffect React hook and async/await syntax**
-- [x] **The app dashboard includes at least three summary statistics about the data such as**
-  - [x] Total number of Breweries
-  - [x] Total number of Micro Breweries
-  - [x] Total number of Korean Breweries 
-- [x] **A search bar allows the user to search for an item in the fetched data**
-- [x] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
+- [x] **Clicking on an item in the list view displays more details about it**
+- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
+
 
 The following **optional** features are implemented:
 
-- [ ] Multiple filters can be applied simultaneously
-- [ ] Filters use different input types such as a text input, a selection, or a slider
-- [ ] The user can enter specific bounds for filter values
+- [x] The site's customized dashboard contains more content that explains what is interesting about the data
+- [ ] The site allows users to toggle between different data visualizations
 
 The following **additional** features are implemented:
 
 * [x] List anything else that you added to improve the site's functionality!
-  - Intuitive side panel that displays buttons and search bars for filtering
-  - Styling
-  - used "Open Brewery API" https://www.openbrewerydb.org/documentation
-     
-
+  - Introduced a "Home" button for navigation.
+  - Incorporated loading indicators for better user feedback.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/WyytBTz.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/wQ5ipDm.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with LICEcap 
+GIF created with LICEcap  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -50,10 +42,11 @@ GIF created with LICEcap
 ## Notes
 
 Describe any challenges encountered while building the app.
-- Understand the nature of useEffect
-- understand endpoint documentation
-- understand CSS styling 
-
+- Handling asynchronous data fetching and updating state appropriately.
+- Managing the complexity of routing and maintaining state across different components.
+- Ensuring consistent and intuitive user interface design.
+- Debugging and resolving issues related to API integration and data rendering.
+  
 ## License
 
     Copyright 2024 Reneca Capuno
